@@ -11,7 +11,17 @@ function App() {
 
   const renderFilteredTasks = () => {
     return filteredList.map((task, index) => {
-      return <li key={index}>{task.title}</li>;
+      return (
+        <li>
+          <ul>
+            <li>
+              <h3>{task.title}</h3>
+            </li>
+            <li>Priority:{task.priority}</li>
+            <li>Est.Time:{task.estimatedTime}</li>
+          </ul>
+        </li>
+      );
     });
   };
 
