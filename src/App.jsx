@@ -19,9 +19,9 @@ function App() {
     return toDoList.map((task, index) => {
       return (
         <li>
-          <ul>
+          <ul className="list-unstyled">
             <li key={task.id}>
-              <h3>{task.title}</h3>
+              <h3 className="h5">{task.title}</h3>
             </li>
             <li>Priority: {task.priority}</li>
             <li>Est.Time: {task.estimatedTime}</li>
@@ -35,9 +35,9 @@ function App() {
     return completedList.map((task) => {
       return (
         <li>
-          <ul>
+          <ul className="list-unstyled">
             <li key={task.id}>
-              <h3>{task.title}</h3>
+              <h3 className="h5">{task.title}</h3>
             </li>
             <li key={task.id + "c"}>Priority: {task.priority}</li>
             <li key={task.id + "d"}>Est.Time: {task.estimatedTime}</li>
@@ -49,16 +49,16 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="container py-4">
         <h1>Task Manager</h1>
       </div>
-      <div>
-        <h2>Current Tasks</h2>
+      <div className="container">
+        <h2 className="h4">Current Tasks({toDoList.length})</h2>
         <ul>{rendertoDoTasks()}</ul>
       </div>
       <hr />
-      <div>
-        <h2>Current Tasks</h2>
+      <div className="container">
+        <h2 className="h4">Current Tasks({completedList.length})</h2>
         <ul>{renderCompletedTasks()}</ul>
       </div>
     </>
