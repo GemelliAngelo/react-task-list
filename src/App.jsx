@@ -16,7 +16,7 @@ function App() {
   });
 
   const rendertoDoTasks = () => {
-    return toDoList.map((task, index) => {
+    return toDoList.map((task) => {
       return (
         <li>
           <ul className="list-unstyled py-2">
