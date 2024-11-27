@@ -9,6 +9,12 @@ function App() {
     }
   });
 
+  const renderFilteredTasks = () => {
+    return filteredList.map((task, index) => {
+      return <li key={index}>{task.title}</li>;
+    });
+  };
+
   return (
     <>
       <div>
@@ -16,11 +22,7 @@ function App() {
       </div>
       <div>
         <h2>Current Tasks</h2>
-        <ul>
-          {filteredList.forEach((task) => {
-            <li>{task.title}</li>;
-          })}
-        </ul>
+        <ul>{renderFilteredTasks()}</ul>
       </div>
       <hr />
       <div>
