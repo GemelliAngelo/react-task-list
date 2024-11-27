@@ -20,8 +20,11 @@ function App() {
       return (
         <li>
           <ul className="list-unstyled py-2">
-            <li key={task.id}>
-              <h3 className="h5">{task.title}</h3>
+            <li key={task.id} className="fw-bold">
+              {task.title}
+              <span className="badge text-bg-warning mx-2 p-2">
+                {task.state}
+              </span>
             </li>
             <li>Priority: {task.priority}</li>
             <li>Est.Time: {task.estimatedTime}</li>
@@ -36,8 +39,11 @@ function App() {
       return (
         <li>
           <ul className="list-unstyled py-2">
-            <li key={task.id}>
-              <h3 className="h5">{task.title}</h3>
+            <li key={task.id} className="fw-bold">
+              {task.title}
+              <span className="badge text-bg-success mx-2 p-2">
+                {task.state}
+              </span>
             </li>
             <li key={task.id + "c"}>Priority: {task.priority}</li>
             <li key={task.id + "d"}>Est.Time: {task.estimatedTime}</li>
@@ -54,12 +60,12 @@ function App() {
       </div>
       <div className="px-3">
         <h2 className="h4 py-4">Current Tasks({toDoList.length})</h2>
-        <ul>{rendertoDoTasks()}</ul>
+        <ul className="list-unstyled">{rendertoDoTasks()}</ul>
       </div>
       <hr />
       <div className="px-3">
         <h2 className="h4 py-4">Current Tasks({completedList.length})</h2>
-        <ul>{renderCompletedTasks()}</ul>
+        <ull className="list-unstyled">{renderCompletedTasks()}</ull>
       </div>
     </>
   );
