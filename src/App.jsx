@@ -49,16 +49,16 @@ function App() {
 
   return (
     <>
-      <div className="container py-4">
-        <h1>Task Manager</h1>
+      <div className="container py-3">
+        <h1 className="h2">Task Manager</h1>
       </div>
       <div className="container">
-        <h2 className="h4">Current Tasks({toDoList.length})</h2>
+        <h2 className="h4 py-4">Current Tasks({toDoList.length})</h2>
         <ul>{rendertoDoTasks()}</ul>
       </div>
       <hr />
       <div className="container">
-        <h2 className="h4">Current Tasks({completedList.length})</h2>
+        <h2 className="h4 py-4">Current Tasks({completedList.length})</h2>
         <ul>{renderCompletedTasks()}</ul>
       </div>
     </>
