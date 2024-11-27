@@ -3,22 +3,44 @@ import { tasks } from "../data/tasksData";
 import "./App.css";
 
 function App() {
-  const filteredList = tasks.filter((task) => {
+  const toDoList = tasks.filter((task) => {
     if (task.state != "completed") {
       return task;
     }
   });
 
-  const renderFilteredTasks = () => {
-    return filteredList.map((task, index) => {
+  const completedList = tasks.filter((task) => {
+    if (task.state == "completed") {
+      return task;
+    }
+  });
+
+  const rendertoDoTasks = () => {
+    return toDoList.map((task, index) => {
       return (
         <li>
           <ul>
-            <li>
+            <li key={task.id}>
               <h3>{task.title}</h3>
             </li>
-            <li>Priority:{task.priority}</li>
-            <li>Est.Time:{task.estimatedTime}</li>
+            <li>Priority: {task.priority}</li>
+            <li>Est.Time: {task.estimatedTime}</li>
+          </ul>
+        </li>
+      );
+    });
+  };
+
+  const renderCompletedTasks = () => {
+    return completedList.map((task) => {
+      return (
+        <li>
+          <ul>
+            <li key={task.id}>
+              <h3>{task.title}</h3>
+            </li>
+            <li key={task.id + "c"}>Priority: {task.priority}</li>
+            <li key={task.id + "d"}>Est.Time: {task.estimatedTime}</li>
           </ul>
         </li>
       );
@@ -32,12 +54,12 @@ function App() {
       </div>
       <div>
         <h2>Current Tasks</h2>
-        <ul>{renderFilteredTasks()}</ul>
+        <ul>{rendertoDoTasks()}</ul>
       </div>
       <hr />
       <div>
         <h2>Current Tasks</h2>
-        <ul></ul>
+        <ul>{renderCompletedTasks()}</ul>
       </div>
     </>
   );
