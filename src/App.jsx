@@ -45,8 +45,8 @@ function App() {
                 {task.state}
               </span>
             </li>
-            <li key={task.id + "c"}>Priority: {task.priority}</li>
-            <li key={task.id + "d"}>Est.Time: {task.estimatedTime}</li>
+            <li>Priority: {task.priority}</li>
+            <li>Est.Time: {task.estimatedTime}</li>
           </ul>
         </li>
       );
@@ -65,7 +65,7 @@ function App() {
       <hr />
       <div className="px-3">
         <h2 className="h4 py-4">Current Tasks({completedList.length})</h2>
-        <ull className="list-unstyled">{renderCompletedTasks()}</ull>
+        <ul className="list-unstyled">{renderCompletedTasks()}</ul>
       </div>
     </>
   );
