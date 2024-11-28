@@ -7,16 +7,24 @@ function App() {
 
   const completedList = tasks.filter((task) => task.state == "completed");
 
+  function getBadgeStyle(state) {
+    if (state === "completed") return "text-bg-success";
+    if (state === "backlog") return "text-bg-danger";
+    if (state === "in_progress") return "text-bg-warning";
+  }
+
   const renderTasks = (tasks) => {
     return tasks.map((task) => (
       <li key={task.id}>
         <ul className="list-unstyled py-2">
           <li className="fw-bold">
             {task.title}
-            <span className="badge text-bg-warning mx-2 p-2">{task.state}</span>
+            <span className={"mx-2 p-2 badge " + getBadgeStyle(task.state)}>
+              {task.state}
+            </span>
           </li>
           <li>Priority: {task.priority}</li>
-          <li>Est.Time: {task.estimatedTime}</li>
+          <li>Est. Time: {task.estimatedTime}</li>
         </ul>
       </li>
     ));
