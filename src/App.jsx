@@ -3,35 +3,23 @@ import { tasks } from "./data/tasksData";
 import "./App.css";
 
 function App() {
-  const toDoList = tasks.filter((task) => {
-    if (task.state != "completed") {
-      return task;
-    }
-  });
+  const toDoList = tasks.filter((task) => task.state != "completed");
 
-  const completedList = tasks.filter((task) => {
-    if (task.state == "completed") {
-      return task;
-    }
-  });
+  const completedList = tasks.filter((task) => task.state == "completed");
 
   const renderTasks = (tasks) => {
-    return tasks.map((task) => {
-      return (
-        <li key={task.id}>
-          <ul className="list-unstyled py-2">
-            <li className="fw-bold">
-              {task.title}
-              <span className="badge text-bg-warning mx-2 p-2">
-                {task.state}
-              </span>
-            </li>
-            <li>Priority: {task.priority}</li>
-            <li>Est.Time: {task.estimatedTime}</li>
-          </ul>
-        </li>
-      );
-    });
+    return tasks.map((task) => (
+      <li key={task.id}>
+        <ul className="list-unstyled py-2">
+          <li className="fw-bold">
+            {task.title}
+            <span className="badge text-bg-warning mx-2 p-2">{task.state}</span>
+          </li>
+          <li>Priority: {task.priority}</li>
+          <li>Est.Time: {task.estimatedTime}</li>
+        </ul>
+      </li>
+    ));
   };
 
   return (
