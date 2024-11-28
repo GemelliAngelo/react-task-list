@@ -9,8 +9,8 @@ function App() {
 
   function getBadgeStyle(state) {
     if (state === "completed") return "text-bg-success";
-    if (state === "backlog") return "text-bg-danger";
-    if (state === "in_progress") return "text-bg-warning";
+    if (state === "backlog") return "text-bg-warning";
+    if (state === "in_progress") return "text-bg-secondary";
   }
 
   const renderTasks = (tasks) => {
